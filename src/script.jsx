@@ -26,6 +26,7 @@ class RobotMasterList extends Component {
       this.toggleSort  = this.toggleSort.bind(this);
       this.toggleGrid  = this.toggleGrid.bind(this);
       this.toggleList  = this.toggleList.bind(this);
+      this.refresh     = this.refresh.bind(this);
     }
 
     toggleSort() {
@@ -53,7 +54,15 @@ class RobotMasterList extends Component {
       });
     }
 
+    refresh() {
+      this.getData();
+    }
+
     componentDidMount() {
+      this.getData();
+    }
+
+    getData() {
       //var url = 'http://megaman-robot-masters.herokuapp.com/avataronly/';
       var url = 'http://localhost:9001/bySeriesId/2';
 
@@ -118,6 +127,7 @@ class RobotMasterList extends Component {
             gridClickHandler = {this.toggleGrid}
             sortClickHandler = {this.toggleSort}
             shuffleClickHandler = {this.sortShuffle}
+            refreshClickHandlder = {this.refresh}
           />
           <ul>
             <FlipMove
