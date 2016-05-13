@@ -1,0 +1,172 @@
+#laboratory {
+  display: flex;
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 2rem auto 0;
+
+
+  .settings {
+    flex: 1;
+    position: relative;
+    margin: 6px 0;
+    padding: 16px;
+
+    .col:first-of-type {
+      margin-right: 6px;
+    }
+    .col:not(:first-of-type) {
+      margin-left: 6px;
+    }
+    .input-area {
+      position: relative;
+      margin: 1rem 0;
+
+      .field-name {
+        font-size: 14px;
+        font-weight: 700;
+      }
+      .slider-value {
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 20px;
+        font-weight: 500;
+        color: lighten($darkgray, 25%);
+      }
+
+      .input {
+        margin-top: 5px;
+      }
+
+      input[type=number] {
+        background: #FFF;
+        border-top: 2px solid $fuscia;
+        border-bottom: 2px solid $fuscia;
+        border-left: 1px solid $fuscia;
+        border-right: 1px solid $fuscia;
+        padding: 0 8px;
+        width: 25%;
+        line-height: 34px;
+        font-size: 13px;
+        outline: none;
+
+        &:first-of-type {
+          border-radius: 3px 0 0 3px;
+          border-left: 2px solid $fuscia;
+        }
+        &:last-of-type {
+          border-radius: 0 3px 3px 0;
+          border-right: 2px solid $fuscia;
+        }
+      }
+    }
+
+    .presets {
+      .field-name {
+        margin-bottom: 4px;
+      }
+      .button-toggle {
+        padding: 8px 15px;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+        border-right: 1px solid rgba(0,0,0,0.2);
+
+        &:first-of-type {
+          border-radius: 5px 0 0 5px;
+        }
+
+        &:last-of-type {
+          border-radius: 0 5px 5px 0;
+        }
+      }
+    }
+
+    .shuffle-spacer {
+      position: relative;
+      height: 3rem;
+    }
+    .shuffle-container {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 1rem;
+
+      .button-toggle {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+
+        &:active {
+          top: 0 !important;
+        }
+      }
+    }
+  }
+
+  .cat-list {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    .cat {
+      position: relative;
+      margin: 6px;
+      padding: 2px;
+
+      .clearfix {
+        clear: both;
+      }
+
+      .cat-img {
+        float: left;
+        margin-right: 8px;
+        width: 80px;
+        height: 80px;
+        border-radius: 2px 0 0 2px;
+      }
+
+      .cat-name {
+        font-weight: 700;
+        color: $fuscia;
+        font-size: 22px;
+      }
+
+      .cat-catchphrase {
+        font-weight: 300;
+        font-size: 16px;
+        color: lighten($darkgray, 25%);
+      }
+
+      .cat-origin {
+        margin-top: 14px;
+        font-size: 12px;
+        color: $darkgray;
+      }
+    }
+  }
+}
+
+@media ( max-width: 900px ) {
+  #laboratory {
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
+
+    .cat-list {
+      order: 2;
+
+      .cat {
+        margin: 6px 0;
+        border-radius: 0;
+      }
+    }
+    .settings {
+      order: 1;
+      border-radius: 0;
+    }
+  }
+}

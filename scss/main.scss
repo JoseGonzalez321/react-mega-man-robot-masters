@@ -1,0 +1,118 @@
+@import './normalize.scss';
+@import './variables.scss';
+@import './toggle.scss';
+@import './1_shuffle.scss';
+//@import './megaman.scss';
+
+
+*, *:before, *:after { box-sizing: border-box; }
+
+html, body, input, button, select, option {
+  color: $darkgray;
+  font-family: "museo-sans-rounded", sans-serif;
+
+}
+
+html, body, #render-target {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: $aqua;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+#main-content {
+  flex: 1;
+  padding-bottom: 60px;
+}
+
+.card {
+  background: $white;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.abs-left {
+  position: absolute;
+  left: 0;
+}
+.abs-right {
+  position: absolute;
+  right: 0;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+ul {
+  padding: 0;
+}
+
+.Dropdown {
+  position: absolute;
+  z-index: 3;
+  background: #FFF;
+  width: 100%;
+  border: 2px solid $fuscia;
+  border-radius: 3px;
+  padding: 0 4px;
+  line-height: 34px;
+  font-size: 13px;
+  cursor: pointer;
+
+  .placeholder {
+    padding: 0 4px;
+  }
+
+  .Dropdown-option, &.is-open .placeholder {
+    border-bottom: 1px solid $lightgray;
+    padding: 0 4px;
+
+    &:hover {
+      background: rgba(0,0,0,0.03);
+    }
+  }
+
+
+
+  .Dropdown-arrow {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    font-family: 'FontAwesome';
+
+    &:before {
+      content: "\f107";
+    }
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: $i;
+  }
+}
