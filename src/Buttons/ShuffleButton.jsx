@@ -1,16 +1,25 @@
-import React, { Component, PropTypes } from 'react';
-import Toggle                          from './Toggle.jsx';
+import React, { PropTypes } from 'react';
+import Toggle from './Toggle.jsx';
 
-export default class ShuffleButton extends Component {
+const propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  icon: PropTypes.string,
+  active: PropTypes.bool,
+};
+
+const defaultProps = {
+  text: 'Shuffle',
+  icon: 'random',
+};
+
+class ShuffleButton extends React.Component {
   render() {
-    const { active, clickHandler } = this.props;
-    return (
-      <Toggle
-        clickHandler = {clickHandler}
-        text = 'Shuffle'
-        icon = 'random'
-        active = {active}
-      />
-    );
+    return <Toggle {...this.props} />;
   }
 }
+
+ShuffleButton.propTypes = propTypes;
+ShuffleButton.defaultProps = defaultProps;
+
+export default ShuffleButton;

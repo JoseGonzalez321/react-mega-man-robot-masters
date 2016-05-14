@@ -1,16 +1,35 @@
-import React, { Component, PropTypes } from 'react';
-import Toggle                          from './Toggle.jsx';
+import React, { PropTypes } from 'react';
+import Toggle from './Toggle.jsx';
 
-export default class SortButton extends Component {
+const propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  icon: PropTypes.string,
+  order: PropTypes.string,
+  active: PropTypes.bool,
+};
+
+const defaultProps = {
+  text: 'Ascending',
+  icon: 'arrow-circle-up',
+  order: 'asc',
+};
+
+class SortButton extends React.Component {
   render() {
-    const { active, order, clickHandler } = this.props;
+    const { order } = this.props;
     return (
       <Toggle
-        clickHandler = {clickHandler}
         text = {order === 'asc' ? 'Ascending' : 'Descending'}
         icon = {order === 'asc' ? 'arrow-circle-up' : 'arrow-circle-down'}
-        active = {active}
+        {...this.props}
+
       />
     );
   }
 }
+
+SortButton.propTypes = propTypes;
+SortButton.defaultProps = defaultProps;
+
+export default SortButton;

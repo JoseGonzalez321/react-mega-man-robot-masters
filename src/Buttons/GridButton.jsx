@@ -1,16 +1,25 @@
-import React, { Component, PropTypes }  from 'react';
-import Toggle                   from './Toggle.jsx';
+import React, { PropTypes }  from 'react';
+import Toggle from './Toggle.jsx';
 
-export default class GridButton extends Component {
+const propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  icon: PropTypes.string,
+  active: PropTypes.bool,
+};
+
+const defaultProps = {
+  text: 'Grid',
+  icon: 'th',  
+};
+
+class GridButton extends React.Component {
   render() {
-    const { active, clickHandler } = this.props;
-    return (
-      <Toggle
-        clickHandler = {clickHandler}
-        text = 'Grid'
-        icon = 'th'
-        active = {active}
-      />
-    );
+    return <Toggle {...this.props} />;
   }
 }
+
+GridButton.propTypes = propTypes;
+GridButton.defaultProps = defaultProps;
+
+export default GridButton;

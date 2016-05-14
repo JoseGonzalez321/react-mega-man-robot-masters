@@ -1,16 +1,25 @@
-import React, { Component, PropTypes } from 'react';
-import Toggle                          from './Toggle.jsx';
+import React, { PropTypes } from 'react';
+import Toggle from './Toggle.jsx';
 
-export default class ListButton extends Component {
+const propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  icon: PropTypes.string,
+  active: PropTypes.bool,
+};
+
+const defaultProps = {
+  text: 'List',
+  icon: 'list',
+};
+
+class ListButton extends React.Component {
   render() {
-    const { active, clickHandler } = this.props;
-    return (
-      <Toggle
-        clickHandler = {clickHandler}
-        text = 'List'
-        icon = 'list'
-        active = {active}
-      />
-    );
+    return <Toggle {...this.props} />;
   }
 }
+
+ListButton.propTypes = propTypes;
+ListButton.defaultProps = defaultProps;
+
+export default ListButton;
