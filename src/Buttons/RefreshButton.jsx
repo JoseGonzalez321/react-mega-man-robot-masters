@@ -1,15 +1,24 @@
-import React, { Component, PropTypes }  from 'react';
-import Toggle                           from './Toggle.jsx';
+import React, { PropTypes }  from 'react';
+import Toggle from './Toggle.jsx';
 
-export default class RefreshButton extends Component {
+const propTypes = {
+  clickHandler: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  icon: PropTypes.string,
+};
+
+const defaultProps = {
+  text: 'Refresh',
+  icon: 'refresh',
+};
+
+class RefreshButton extends React.Component {
   render() {
-    const { clickHandler } = this.props;
-    return (
-      <Toggle
-        clickHandler = {clickHandler}
-        text = 'Refresh'
-        icon = 'refresh'
-      />
-    );
+    return <Toggle {...this.props} />;
   }
 }
+
+RefreshButton.propTypes = propTypes;
+RefreshButton.defaultProps = defaultProps;
+
+export default RefreshButton;
