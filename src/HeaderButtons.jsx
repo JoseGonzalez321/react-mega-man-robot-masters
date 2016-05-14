@@ -1,11 +1,22 @@
-import React, { Component, PropTypes } from 'react';
-import ListButton                      from './Buttons/ListButton.jsx';
-import GridButton                      from './Buttons/GridButton.jsx';
-import SortButton                      from './Buttons/SortButton.jsx';
-import ShuffleButton                   from './Buttons/ShuffleButton.jsx';
-import RefreshButton                   from './Buttons/RefreshButton.jsx';
+import React, { PropTypes } from 'react';
+import ListButton from './Buttons/ListButton.jsx';
+import GridButton from './Buttons/GridButton.jsx';
+import SortButton from './Buttons/SortButton.jsx';
+import ShuffleButton from './Buttons/ShuffleButton.jsx';
+import RefreshButton from './Buttons/RefreshButton.jsx';
 
-export default class HeaderButtons extends Component {
+const propTypes = {
+  view: PropTypes.string,
+  order: PropTypes.string,
+  sortingMethod: PropTypes.string,
+  listClickHandler: PropTypes.func,
+  gridClickHandler: PropTypes.func,
+  sortClickHandler: PropTypes.func,
+  shuffleClickHandler: PropTypes.func,
+  refreshClickHandlder: PropTypes.func,
+};
+
+class HeaderButtons extends React.Component {
   render() {
     const { view, listClickHandler, gridClickHandler } = this.props;
     const { order, sortingMethod, sortClickHandler, shuffleClickHandler } = this.props;
@@ -39,3 +50,7 @@ export default class HeaderButtons extends Component {
     );
   }
 }
+
+HeaderButtons.propTypes = propTypes;
+
+export default HeaderButtons;
