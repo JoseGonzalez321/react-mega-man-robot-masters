@@ -10,8 +10,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  text: 'Ascending',
-  icon: 'arrow-circle-up',
   order: 'asc',
 };
 
@@ -23,7 +21,6 @@ class SortButton extends React.Component {
         text = {order === 'asc' ? 'Ascending' : 'Descending'}
         icon = {order === 'asc' ? 'arrow-circle-up' : 'arrow-circle-down'}
         {...this.props}
-
       />
     );
   }

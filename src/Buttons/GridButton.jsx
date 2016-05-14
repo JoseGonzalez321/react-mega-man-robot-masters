@@ -10,7 +10,7 @@ const propTypes = {
 
 const defaultProps = {
   text: 'Grid',
-  icon: 'th',  
+  icon: 'th',
 };
 
 class GridButton extends React.Component {
