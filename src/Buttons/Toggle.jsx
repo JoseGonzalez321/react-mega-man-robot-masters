@@ -1,7 +1,7 @@
-import React, {Component, PropTypes} from 'react';
-import classNames                   from 'classnames';
+import React, { PropTypes } from 'react';
+import classNames from 'classnames';
 
-export default class Toggle extends Component {
+export default class Toggle extends React.Component {
   render() {
     const { clickHandler, text, icon, active, large } = this.props;
     const buttonClass = classNames({
