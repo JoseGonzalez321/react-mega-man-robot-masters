@@ -1,22 +1,23 @@
-import React, {Component, PropTypes}        from 'react';
-import ReactDOM                             from 'react-dom';
-import FlipMove                             from 'react-flip-move';
-import classNames                           from 'classNames';
-import {shuffle}                            from 'lodash';
+import React, { PropTypes} from 'react';
+import ReactDOM from 'react-dom';
+import FlipMove from 'react-flip-move';
+import classNames from 'classNames';
+import {shuffle} from 'lodash';
 
-import * as query                           from './getData';
-import RobotMaster                          from './RobotMaster.jsx';
-import HeaderButtons                        from './HeaderButtons.jsx';
+import * as query from './getData';
+import RobotMaster from './RobotMaster.jsx';
+import HeaderButtons from './HeaderButtons.jsx';
 
-class RobotMasterList extends Component {
+class RobotMasterList extends React.Component {
     constructor(props) {
       super(props);
 
       this.state = {
         removedRobotMasters: [],
         robotMasters: [],
-        view: 'grid',
+        view: 'list',
         order: 'asc',
+        series: '3',
         sortingMethod: 'chronological',
         enterLeaveAnimation: 'accordianHorizontal',
         inProgress: false,
@@ -64,7 +65,7 @@ class RobotMasterList extends Component {
 
     getData() {
       //var url = 'http://megaman-robot-masters.herokuapp.com/avataronly/';
-      var url = 'http://localhost:9001/bySeriesId/2';
+      var url = `http://localhost:9001/bySeriesId/${this.state.series}`;
 
       this.serverRequest = query.getData(url, (robotMastersData) => {
         this.setState({ robotMasters: robotMastersData });
