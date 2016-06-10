@@ -2,8 +2,8 @@
   "name": "react-megaman-robot-masters",
   "version": "0.0.1",
   "description": "React SPA showing list of Robot Masters from Mega man/Rockman series",
-  "scripts": {
-    "build": "webpack-dev-server --progress --colors"
+  "scripts": {    
+    "start": "webpack-dev-server --progress --colors"
   },
   "keywords": [
     "Rockman",

@@ -1,0 +1,112 @@
+@import './variables.scss';
+
+$header-height: 75px;
+$num-of-demos: 4;
+
+
+#header {
+  position: relative;
+  height: $header-height;
+  background: $fuscia;
+
+  #logo {
+    position: absolute;
+    left: 16px;
+    height: $header-height;
+    text-decoration: none;
+
+    h2 {
+      color: $darkgray;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: $header-height;
+    }
+  }
+
+  nav {
+    position: absolute;
+    right: 16px;
+    width: $header-height * $num-of-demos;
+    height: $header-height;
+    padding: 0;
+
+    .nav-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      &.links           { z-index: 3; }
+      &.current-circle  { z-index: 2; }
+      &.gray-circles    { z-index: 1; }
+
+    }
+
+    .nav-item {
+      color: $darkgray;
+      position: relative;
+      height: $header-height;
+      width: $header-height;
+      display: block;
+      float: left;
+      text-align: center;
+      transition: 300ms;
+
+      &.current {
+        transition: 300ms;
+        color: $white;
+      }
+
+      h2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: $header-height * 0.5;
+        height: $header-height * 0.5;
+        line-height: $header-height * 0.5;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+
+    .circle {
+      position: relative;
+      height: $header-height;
+      width: $header-height;
+      display: block;
+      float: left;
+
+      // The actual circle is a pseudo-element.
+      // .circle is the square container that holds its place.
+      &:before {
+        content: '';
+        z-index: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        width: $header-height * 0.5;
+        height: $header-height * 0.5;
+        background: lighten($lightgray, 10%);
+        border-radius: 100%;
+        transition: 750ms;
+      }
+
+
+      &.current {
+        position: absolute;
+
+        &:before {
+          background: $fuscia;
+        }
+      }
+    }
+  }
+}

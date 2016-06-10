@@ -1,5 +1,6 @@
 import React, { PropTypes} from 'react';
 import ReactDOM from 'react-dom';
+import Dropdown from 'react-dropdown';
 import FlipMove from 'react-flip-move';
 import classNames from 'classNames';
 import {shuffle} from 'lodash';
@@ -8,6 +9,8 @@ import * as query from './getData';
 import RobotMaster from './RobotMaster.jsx';
 import HeaderButtons from './HeaderButtons.jsx';
 
+import Toggle from './Buttons/Toggle.jsx';
+
 class RobotMasterList extends React.Component {
     constructor(props) {
       super(props);
@@ -15,9 +18,10 @@ class RobotMasterList extends React.Component {
       this.state = {
         removedRobotMasters: [],
         robotMasters: [],
-        view: 'list',
+        view: 'grid',
         order: 'asc',
-        series: '3',
+        series: [2, 3],
+        selectedSeries: '2',
         sortingMethod: 'chronological',
         enterLeaveAnimation: 'accordianHorizontal',
         inProgress: false,
@@ -28,6 +32,7 @@ class RobotMasterList extends React.Component {
       this.toggleGrid  = this.toggleGrid.bind(this);
       this.toggleList  = this.toggleList.bind(this);
       this.refresh     = this.refresh.bind(this);
+      this.selectSeries = this.selectSeries.bind(this);
     }
 
     toggleSort() {
@@ -38,6 +43,15 @@ class RobotMasterList extends React.Component {
         order: (this.state.order === 'asc' ? 'desc' : 'asc'),
         sortingMethod: 'chronological',
         robotMasters: this.state.robotMasters.sort(this.state.order === 'asc' ? sortDesc : sortAsc),
+      });
+    }
+
+    selectSeries(e) {
+      //Need more elegant way than e.target.textContent
+      if (this.state.selectedSeries === e.target.textContent) return;
+
+      this.setState({
+        selectedSeries: e.target.textContent,
       });
     }
 
@@ -64,8 +78,9 @@ class RobotMasterList extends React.Component {
     }
 
     getData() {
-      //var url = 'http://megaman-robot-masters.herokuapp.com/avataronly/';
-      var url = `http://localhost:9001/bySeriesId/${this.state.series}`;
+      const prod = 'megaman-robot-masters.herokuapp.com';
+      const local = 'localhost:9001';
+      const url = `http://${prod}/bySeriesId/${this.state.selectedSeries}`;
 
       this.serverRequest = query.getData(url, (robotMastersData) => {
         this.setState({ robotMasters: robotMastersData });
@@ -74,6 +89,12 @@ class RobotMasterList extends React.Component {
 
     componentWillUnmount() {
       this.serverRequest.abort();
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+      if (this.state.selectedSeries !== prevState.selectedSeries) {
+        this.getData();
+      }
     }
 
     moveRobotMaster(source, dest, index = 0) {
@@ -117,7 +138,7 @@ class RobotMasterList extends React.Component {
     }
 
     render() {
-      const { view, order, sortingMethod } = this.state;
+      const { view, order, sortingMethod, selectedSeries, series } = this.state;
       return (
         <div id="shuffle" className={view}>
           <HeaderButtons
@@ -129,6 +150,18 @@ class RobotMasterList extends React.Component {
             sortClickHandler = {this.toggleSort}
             shuffleClickHandler = {this.sortShuffle}
             refreshClickHandlder = {this.refresh}
+          />
+          <div className="dropdown-spacer" style={{ height: 10 }} />
+          <h2>Series</h2>
+          <Toggle
+            text = '2'
+            active = {this.state.selectedSeries === '2'}
+            clickHandler = {this.selectSeries}
+          />
+          <Toggle
+            text = '3'
+            active = {this.state.selectedSeries === '3'}
+            clickHandler = {this.selectSeries}
           />
           <ul>
             <FlipMove
