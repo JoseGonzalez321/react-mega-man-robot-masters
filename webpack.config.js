@@ -3,6 +3,9 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: './src/main',
+  resolve: {
+    extensions: ['', '.js']
+  },
   output: { 
     path: path.join(__dirname, '/dist'), 
     publicPath: '/',
