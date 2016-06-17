@@ -6,7 +6,7 @@ import {shuffle} from 'lodash';
 
 import * as query from './getData';
 import HeaderButtons from './HeaderButtons.jsx';
-import RobotMaster from './RobotMaster.jsx';
+//import RobotMaster from './RobotMaster.jsx';
 
 
 import Toggle from './Buttons/Toggle.jsx';
@@ -119,13 +119,7 @@ class RobotMasterList extends React.Component {
 
       return robotMasters.map((robot, i) => {
         return (
-          <RobotMaster
-            key = {robot.id}
-            view = {view}
-            index= {i}
-            clickHandler ={() => this.moveRobotMaster('robotMasters', 'removedRobotMasters', i)}
-            {...robot}
-          />
+          <h1>{robot.id}</h1>          
         );
       });
     }
