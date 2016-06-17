@@ -2,8 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './main.js',
-  output: { path: __dirname, filename: 'bundle.js' }, 
+  entry: './src/main',
+  output: { 
+    path: path.join(__dirname, '/dist'), 
+    publicPath: '/',
+    filename: 'bundle.js' }, 
   module: {
     loaders: [
       // JAVASCRIPT
@@ -22,4 +25,13 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    contentBase: './dist',
+    hot: true
+  },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+]
 };
