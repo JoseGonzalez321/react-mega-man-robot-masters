@@ -2,7 +2,6 @@ import React, { PropTypes} from 'react';
 import ReactDOM from 'react-dom';
 import Dropdown from 'react-dropdown';
 import FlipMove from 'react-flip-move';
-import classNames from 'classNames';
 import {shuffle} from 'lodash';
 
 import * as query from './getData';
