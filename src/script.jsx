@@ -5,8 +5,9 @@ import FlipMove from 'react-flip-move';
 import {shuffle} from 'lodash';
 
 import * as query from './getData';
-import RobotMaster from './RobotMaster.jsx';
 import HeaderButtons from './HeaderButtons.jsx';
+import RobotMaster from './RobotMaster.jsx';
+
 
 import Toggle from './Buttons/Toggle.jsx';
 
