@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "webpack -p --config webpack.prod.config.js"
+    "postinstall": "webpack -p --config webpack.prod.config.js --display-error-details"
   },
   "keywords": [
     "Rockman",
