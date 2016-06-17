@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   entry: './src/main',
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js', '.jsx']
   },
   output: { 
     path: path.join(__dirname, '/dist'), 
