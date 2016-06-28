@@ -1,46 +1,21 @@
-# Robot Masters for MegaMan/Rockman series
-A React app listing the robot masters from the Mega Man series. It uses react-flip-move that uses FLIP animations.
+# React + Node Starter (for [Heroku](https://www.heroku.com/) deployment)
 
-# Inspired by Flip Move Samples
-You can find those examples here:
+### UP & RUNNING
+* `npm install`
+* `npm start`
+* visit `http://localhost:8080/`
 
-https://github.com/joshwcomeau/react-flip-move
+### CHANGELOG
+**v.0.2.0**
+This app has been updated to use React v15 and Babel v6! I have also updated the file structure to reflect naming conventions you'll most likely see in other applications. If you'd like to go back to v.0.0.1 (which should've been named 0.1.0), you can find go back to [this commit](https://github.com/alanbsmith/react-node-example/commit/dd6d745c4b7066fd12104d5005b805afaf469d91).
 
-#Running Locally
-* Clone repo
-* Run the following commands:
+### DEPLOYING TO HEROKU
+This app is set up for deployment to Heroku!
 
-```bash
-npm install
-npm run start
-```
-* Open your favorite browser and enter
+Heroku will follow the `postinstall` command in your `package.json` and compile assets with `webpack.prod.config.js`. It runs the Express web server in `server.js`. You'll notice there's a special section set up for running in development.
 
-```bash
-localhost:8080/webpack-dev-server/
-```
+If you've never deployed a Node app to Heroku (or just need a refresher), they have a really great walkthrough [here](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction). 
 
-#Functionality (buttons)
-
-## List
-Displays robot masters in a list format.
-
-## Grid
-Displays robot masters in a grid-like format (current default)
-
-## Ascending
-Orders robot masters by `Ascending` or `Decending` order. Order determined by robot master id (e.g. 009)
-
-## Shuffle
-Shuffles the robot masters order randomly. Hey, this is cool when you replay the game and can't figure out which boss to start. Forget the traditional suggested kill order (live a little!)  :p
-
-## Refresh
-Resets the robot master list.  
-
-## Series
-Filters the robot masters for each specific series.
-
-## Close button
-If you put your mouse over each robot master, you will see a "X" button. This removes the robot master from the list. Yay, you killed him or her! (Yes, there's a [female robot master](http://megaman.wikia.com/wiki/Splash_Woman))
-
+### REDUX STARTER
+If you're looking for a similar, minimalistic Redux starter, I would recommend Marc Garreau's [here](https://github.com/marcgarreau/redux-starter)
 

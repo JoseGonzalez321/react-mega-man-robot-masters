@@ -1,0 +1,136 @@
+@import './variables.scss';
+
+#shuffle {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+
+  header {
+    position: relative;
+    padding: 16px;
+    height: 45px;
+    margin: 4px 0;
+
+  }
+  .list-item {
+
+    position: relative;
+
+    margin: 0 6px 6px 6px;
+    padding: 10px;
+    list-style-type: none;
+
+    &:hover button {
+      display: block;
+    }
+
+    .robot-name {
+        font-weight: 700;
+        color: $fuscia;
+        clear:both;
+      }
+
+    .robot-serial {
+      font-weight: 400;
+      font-size: 18px;
+      color: lighten($darkgray, 15%);
+      clear:both;
+    }
+
+    .robot-mug {
+      display: inline-block;
+      width: 200px;
+    }
+
+    .robot-info {
+      display: inline-block;
+      width: 210px;      
+      vertical-align: top;
+      padding-top: 5px;
+      padding-left: 10px;
+      padding-right: 5px;
+      padding-bottom: 0px;
+    }
+
+    &.list {
+      display: block;
+
+      .clearfix {
+        clear:both;
+      }
+
+      img {
+        float: left;
+        margin-right: 20px;
+        width: 70px;
+        height: 70px;
+        border-radius: 2px 0 0 2px;
+      }
+
+      .img-sprite {
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 2px 0 0 2px;
+      }
+
+       .robot-weapon {
+        margin-top:0px;        
+      }   
+
+      .robot-weakness {
+        margin-top:5px;
+        margin-bottom:0px;     
+      }      
+
+      button {
+        top: 0;
+        right: 10px;
+        bottom: 0;
+        margin: auto;
+        width: 52px;
+        height: 52px;
+        background: lighten($fuscia, 15%);
+        border: 0;
+        border-radius: 4px;
+        color: $white;
+        font-size: 20px;
+      }
+    }
+
+    &.grid {
+      display: inline-block;
+      width: 230px;
+
+      img {
+          margin-right: 8px;
+          width: 80px;
+          height: 80px;
+          border-radius: 2px 0 0 2px;
+      }
+      .img-sprite {
+        display:none;
+      }
+      .robot-serial {
+        display:none;
+      }
+
+      button {
+        top: 0;
+        right: 0;
+        font-size: 25px;
+        background: lighten($fuscia, 15%);
+        border: 0;
+        border-radius: 4px;
+        color: $white;
+        font-size: 20px;        
+      }
+    }
+
+    button {
+      display: none;
+      position: absolute;
+    }
+  }
+}

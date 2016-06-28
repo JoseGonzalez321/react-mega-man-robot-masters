@@ -1,32 +1,23 @@
-const path = require('path');
-const webpack = require('webpack');
+var webpack = require('webpack');
+var path = require('path');
 
 module.exports = {
-  entry: './src/main',
+  entry: [
+    './src/index'
+  ],
+  module: {
+    loaders: [
+      { test: /\.jsx?$/, loader: 'babel', exclude: /node_modules/ },
+      { test: /\.s?css$/, loader: 'style!css!sass' },
+    ]
+  },
   resolve: {
     extensions: ['', '.js', '.jsx']
   },
-  output: { 
-    path: path.join(__dirname, '/dist'), 
+  output: {
+    path: path.join(__dirname, '/dist'),
     publicPath: '/',
-    filename: 'bundle.js' }, 
-  module: {
-    loaders: [
-      // JAVASCRIPT
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
-      },
-      // SASS
-      {
-        test: /\.scss$/,
-        loader: 'style!css!sass'
-      }
-    ]
+    filename: 'bundle.js'
   },
   devServer: {
     contentBase: './dist',
@@ -36,5 +27,5 @@ module.exports = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
-]
+  ]
 };

@@ -1,24 +1,20 @@
 {
-  "name": "react-megaman-robot-masters",
-  "version": "0.0.1",
-  "description": "React SPA showing list of Robot Masters from Mega man/Rockman series",
+  "name": "react-node-starter",
+  "version": "0.2.0",
+  "description": "an example for deploying a React + NodeJS app to Heroku",
   "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "postinstall": "webpack -p --config webpack.prod.config.js --display-error-details"
+    "postinstall": "webpack -p --config webpack.prod.config.js"
   },
-  "keywords": [
-    "Rockman",
-    "Megaman",
-    "robotmasters"
-  ],
-  "author": "Jose Gonzalez",
-  "license": "None",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "babel-core": "^6.7.6",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.6.0",
-    "babel-preset-react": "^6.5.0",    
+    "babel-preset-react": "^6.5.0",
     "css-loader": "^0.23.1",
     "express": "^4.13.4",
     "node-sass": "^3.4.2",
@@ -34,8 +30,5 @@
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.10.0"
-  },
-  "plugins": [
-    "react"
-  ]
+  }
 }
