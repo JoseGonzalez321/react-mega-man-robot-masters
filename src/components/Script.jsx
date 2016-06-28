@@ -79,7 +79,7 @@ class RobotMasterList extends React.Component {
     getData() {
       const prod = 'megaman-robot-masters.herokuapp.com';
       const local = 'localhost:9001';
-      const url = `http://${prod}/bySeriesId/${this.state.selectedSeries}`;
+      const url = `https://${prod}/bySeriesId/${this.state.selectedSeries}`;
 
       this.serverRequest = query.getData(url, (robotMastersData) => {
         this.setState({ robotMasters: robotMastersData });
