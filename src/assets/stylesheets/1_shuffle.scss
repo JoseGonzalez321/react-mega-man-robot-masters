@@ -43,7 +43,7 @@
       width: 205px;
     }
 
-    .robot-info {
+    .robot-info, .robot-other {
       display: inline-block;
       width: 210px;      
       vertical-align: top;
@@ -109,11 +109,17 @@
           height: 80px;
           border-radius: 2px 0 0 2px;
       }
-      .img-sprite {
+
+      .robot-info, .img-sprite {
         display:none;
       }
+
       .robot-serial {
-        display:none;
+        font-weight: 400;
+        font-size: 20px;
+        color: lighten($darkgray, 5%);
+        margin: 0px;
+        padding: 0px;
       }
 
       button {

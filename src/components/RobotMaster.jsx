@@ -29,7 +29,7 @@ class RobotMaster extends React.Component {
             <h2 className="robot-weakness">Weakness</h2>
             <div>{weakness}</div>
           </div>
-          <div className="robot-info">
+          <div className="robot-other">
             <img className="img-sprite" src={sprite1} />
             <h1 className="robot-serial">DWN {id}</h1>   
           </div>
