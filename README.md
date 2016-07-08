@@ -1,21 +1,15 @@
-# React + Node Starter (for [Heroku](https://www.heroku.com/) deployment)
+# Mega Man Robot Masters
+A react application listing the Mega Man Robot Masters.
 
-### UP & RUNNING
+![Alt text](https://react.rocks/images/converted/mega-man-robot-masters.jpg "Mega Man Robot Masters")
+
+## See it live at
+Live demo: [react-mega-man-robot-masters.herokuapp.com](react-mega-man-robot-masters.herokuapp.com)
+
+## Mega Man Robot Masters API
+It consumes the [Mega Man Robot Masters API](https://github.com/JoseGonzalez321/megaman-robot-masters)
+
+## UP & RUNNING
 * `npm install`
 * `npm start`
 * visit `http://localhost:8080/`
-
-### CHANGELOG
-**v.0.2.0**
-This app has been updated to use React v15 and Babel v6! I have also updated the file structure to reflect naming conventions you'll most likely see in other applications. If you'd like to go back to v.0.0.1 (which should've been named 0.1.0), you can find go back to [this commit](https://github.com/alanbsmith/react-node-example/commit/dd6d745c4b7066fd12104d5005b805afaf469d91).
-
-### DEPLOYING TO HEROKU
-This app is set up for deployment to Heroku!
-
-Heroku will follow the `postinstall` command in your `package.json` and compile assets with `webpack.prod.config.js`. It runs the Express web server in `server.js`. You'll notice there's a special section set up for running in development.
-
-If you've never deployed a Node app to Heroku (or just need a refresher), they have a really great walkthrough [here](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction). 
-
-### REDUX STARTER
-If you're looking for a similar, minimalistic Redux starter, I would recommend Marc Garreau's [here](https://github.com/marcgarreau/redux-starter)
-
