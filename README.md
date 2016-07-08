@@ -3,6 +3,9 @@ A react application listing the Mega Man Robot Masters. It uses [react-flip-move
 
 ![Alt Text](src/assets/images/mega-man-robot-masters.gif?raw=true "Mega man Robot Masters")
 
+## Featured on React.Rocks
+[https://react.rocks/example/mega-man-robot-masters](https://react.rocks/example/mega-man-robot-masters)
+
 ## Mega Man Robot Masters API
 It consumes the [Mega Man Robot Masters API](https://github.com/JoseGonzalez321/megaman-robot-masters)
 
@@ -10,8 +13,6 @@ It consumes the [Mega Man Robot Masters API](https://github.com/JoseGonzalez321/
 What are you waiting for? Play with it! (You know you want to)
 
 Live demo: [https://react-mega-man-robot-masters.herokuapp.com](https://react-mega-man-robot-masters.herokuapp.com)
-
-
 
 ## UP & RUNNING
 * `git clone` or fork it
