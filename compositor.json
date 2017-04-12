@@ -7,84 +7,30 @@
   "title": "",
   "branch": "",
   "style": {
-    "name": "Default",
+    "name": "Humanist",
     "componentSet": {
       "nav": "nav/BasicNav",
-      "header": "header/BannerHeader",
-      "article": "article/BasicArticle",
+      "header": "header/LightBannerHeader",
+      "article": "article/ReaderArticle",
       "footer": "footer/BasicFooter"
     },
-    "fontFamily": "-apple-system, BlinkMacSystemFont, sans-serif",
-    "fontWeight": 400,
-    "bold": 600,
-    "lineHeight": 1.5,
-    "typeScale": [
-      72,
-      48,
-      24,
-      20,
-      16,
-      14,
-      12
-    ],
-    "monospace": "Menlo, monospace",
+    "fontFamily": "Athelas, Georgia, serif",
     "heading": {
-      "fontFamily": null,
-      "fontStyle": null,
-      "fontWeight": 600,
-      "lineHeight": 1.25,
-      "textTransform": null,
-      "letterSpacing": null
-    },
-    "h0": {},
-    "h1": {},
-    "h2": {},
-    "h3": {},
-    "h4": {},
-    "h5": {},
-    "h6": {},
-    "alternativeText": {},
-    "space": [
-      0,
-      8,
-      16,
-      32,
-      48,
-      64,
-      96
-    ],
-    "layout": {
-      "maxWidth": 1024,
-      "centered": false
+      "fontWeight": 400,
+      "textTransform": "uppercase",
+      "letterSpacing": "0.1em"
     },
     "colors": {
-      "text": "#111",
+      "text": "#121212",
       "background": "#fff",
-      "primary": "#08e",
-      "secondary": "#059",
-      "highlight": "#e08",
+      "primary": "#ee5544",
+      "secondary": "#005499",
+      "highlight": "#00bd78",
       "border": "#ddd",
-      "muted": "#eee"
+      "muted": "#f3f3f3"
     },
-    "border": {
-      "width": 1,
-      "radius": 2
-    },
-    "link": {},
-    "button": {
-      "hover": {
-        "boxShadow": "inset 0 0 0 999px rgba(0, 0, 0, .125)"
-      }
-    },
-    "input": {},
-    "body": {
-      "margin": 0
-    },
-    "breakpoints": {
-      "xs": "@media screen and (max-width:40em)",
-      "sm": "@media screen and (min-width:40em)",
-      "md": "@media screen and (min-width:52em)",
-      "lg": "@media screen and (min-width:64em)"
+    "layout": {
+      "maxWidth": 768
     }
   },
   "content": [
